@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aparelho Bucal dos Hexápodes — Catálogo de Espécimes</title>
+<meta name="description" content="Guia de referência sobre a morfologia e diversidade dos aparelhos bucais dos hexápodes, com material complementar e artigos para consulta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ======= CORES DO SITE — mude os valores hexadecimais abaixo ======= */
+    --paper: #E9E1CC;
+    --paper-deep: #DED2B2;
+    --ink: #23291F;
+    --ink-soft: #4A5142;
+    --amber: #B0702E;
+    --amber-deep: #8A5620;
+    --pin-red: #8C2F39;
+    --moss: #566246;
+    --line: #A79975;
+    --card-bg: #F4EEDD;
+    --shadow: rgba(35,41,31,0.18);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.6;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(35,41,31,0.045) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--ink);
+    margin:0 0 .4em 0;
+    letter-spacing:-0.01em;
+  }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--amber-deep);
+    display:flex;
+    align-items:center;
+    gap:.5em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:18px;height:1px;background:var(--amber-deep);
+    display:inline-block;
+  }
+
+  a{color:var(--amber-deep);}
+  a:focus-visible, button:focus-visible, .card:focus-visible{
+    outline:2px solid var(--pin-red);
+    outline-offset:3px;
+  }
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+  /* ---------- HEADER ---------- */
+  header.site-header{
+    position:static;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 0;
+    max-width:1080px; margin:0 auto; padding-left:28px; padding-right:28px;
+  }
+  .brandmark{
+    display:flex; align-items:center; gap:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem; font-weight:600;
+    color:var(--ink);
+    text-decoration:none;
+    background:none; border:none; cursor:pointer; padding:0;
+  }
+  .brandmark svg{width:26px;height:26px;flex-shrink:0;}
+  nav.links{display:flex; gap:22px; flex-wrap:wrap;}
+  nav.links button{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    text-decoration:none;
+    color:var(--ink-soft);
+    background:none; border:none; cursor:pointer;
+    padding:4px 0;
+    border-bottom:1px solid transparent;
+    transition:border-color .15s, color .15s;
+  }
+  nav.links button:hover{color:var(--pin-red); border-color:var(--pin-red);}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:64px 0 40px;}
+  .hero-tag{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.7rem; letter-spacing:.08em; text-transform:uppercase;
+    background:var(--card-bg); border:1px solid var(--line);
+    padding:6px 12px; border-radius:2px; color:var(--ink-soft);
+    margin-bottom:22px;
+  }
+  .hero-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--pin-red);}
+  h1.hero-title{
+    font-size:clamp(2.2rem, 5vw, 3.6rem);
+    max-width:14ch;
+    line-height:1.03;
+  }
+  .hero-title em{font-style:italic; color:var(--amber-deep);}
+  .hero-sub{
+    max-width:56ch;
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    margin-top:18px;
+  }
+  .hero-meta{
+    margin-top:32px;
+    display:flex; gap:28px; flex-wrap:wrap;
+    border-top:1px solid var(--line);
+    padding-top:20px;
+  }
+  .hero-meta div{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--ink-soft);}
+  .hero-meta strong{display:block; font-family:'Fraunces',serif; font-size:1.1rem; color:var(--ink); font-weight:600;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:56px 0; scroll-margin-top:20px;}
+  section + section{border-top:1px solid var(--line);}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:20px; flex-wrap:wrap; margin-bottom:32px;
+  }
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.1rem);}
+  .section-head p{color:var(--ink-soft); max-width:52ch; margin:6px 0 0;}
+
+  /* ---------- ANATOMY DIAGRAM ---------- */
+  .anatomy-grid{
+    display:grid; grid-template-columns: 1.15fr 0.85fr; gap:40px; align-items:center;
+  }
+  @media (max-width:800px){.anatomy-grid{grid-template-columns:1fr;}}
+  .diagram-frame{
+    background:var(--card-bg);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:24px;
+    box-shadow: 4px 4px 0 var(--shadow);
+  }
+  .diagram-frame svg{width:100%; height:auto; display:block;}
+  .anatomy-list{list-style:none; margin:0; padding:0;}
+  .anatomy-list li{
+    display:grid; grid-template-columns: 28px 1fr; gap:12px;
+    padding:12px 0; border-bottom:1px dashed var(--line);
+  }
+  .anatomy-list li:last-child{border-bottom:none;}
+  .anatomy-list .idx{font-family:'IBM Plex Mono',monospace; color:var(--amber-deep); font-weight:600;}
+  .anatomy-list h4{font-size:1rem; margin-bottom:2px;}
+  .anatomy-list p{margin:0; font-size:0.92rem; color:var(--ink-soft);}
+
+  /* ---------- SPECIMEN DRAWER (mouthpart types) ---------- */
+  .drawer{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+  }
+  @media (max-width:900px){.drawer{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.drawer{grid-template-columns:1fr;}}
+
+  .card{
+    position:relative;
+    background:var(--card-bg);
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:20px 18px 18px;
+    text-align:left;
+    cursor:pointer;
+    font-family:inherit;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:2px 2px 0 var(--shadow);
+  }
+  .card:hover{transform:translateY(-3px); box-shadow:5px 6px 0 var(--shadow);}
+  .card.active{
+    border-color:var(--pin-red);
+    box-shadow:5px 6px 0 var(--shadow);
+    transform:translateY(-3px);
+  }
+  .pin{
+    position:absolute; top:-8px; left:16px;
+    width:14px;height:14px;border-radius:50%;
+    box-shadow:0 2px 3px rgba(0,0,0,0.3);
+    border:2px solid var(--paper);
+  }
+  .card .glyph{width:44px;height:44px; margin-bottom:10px;}
+  .card .catno{
+    font-family:'IBM Plex Mono',monospace; font-size:0.68rem; color:var(--ink-soft);
+    letter-spacing:.05em; margin-bottom:6px; display:block;
+  }
+  .card h3{font-size:1.05rem; margin-bottom:4px;}
+  .card .example{font-size:0.85rem; color:var(--ink-soft); font-style:italic;}
+
+  .detail-panel{
+    margin-top:28px;
+    background:var(--card-bg);
+    border:1px solid var(--ink);
+    border-radius:4px;
+    padding:28px;
+    display:none;
+    box-shadow:6px 6px 0 var(--shadow);
+  }
+  .detail-panel.show{display:block; animation:rise .25s ease;}
+  @keyframes rise{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+  .detail-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:32px; align-items:center;}
+  @media (max-width:800px){.detail-grid{grid-template-columns:1fr;}}
+  .detail-grid svg{width:100%; height:auto;}
+  .detail-panel .catno{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--pin-red); letter-spacing:.06em;}
+  .detail-panel h3{font-size:1.5rem; margin-top:4px;}
+  .taglist{display:flex; gap:8px; flex-wrap:wrap; margin:14px 0;}
+  .taglist span{
+    font-family:'IBM Plex Mono',monospace; font-size:0.68rem;
+    border:1px solid var(--line); padding:4px 9px; border-radius:20px; color:var(--ink-soft);
+  }
+  .detail-panel .func{margin-top:14px; padding-top:14px; border-top:1px dashed var(--line); font-size:0.92rem; color:var(--ink-soft);}
+  .detail-panel .func strong{color:var(--ink);}
+
+  /* ---------- ORIENTATION ---------- */
+  .orient-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:760px){.orient-grid{grid-template-columns:1fr;}}
+  .orient-card{background:var(--card-bg); border:1px solid var(--line); padding:18px; border-radius:3px;}
+  .orient-card svg{width:100%; max-width:160px; display:block; margin:0 auto 12px;}
+  .orient-card h4{text-align:center; font-size:1rem;}
+  .orient-card p{text-align:center; font-size:0.88rem; color:var(--ink-soft); margin:4px 0 0;}
+
+  /* ---------- TABLE ---------- */
+  .table-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:4px; background:var(--card-bg);}
+  table{width:100%; border-collapse:collapse; font-size:0.92rem; min-width:640px;}
+  thead th{
+    font-family:'IBM Plex Mono',monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:.06em;
+    text-align:left; padding:12px 16px; color:var(--ink-soft); border-bottom:1px solid var(--ink);
+  }
+  tbody td{padding:11px 16px; border-bottom:1px solid var(--line); vertical-align:top;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:rgba(176,112,46,0.08);}
+  td.order-name{font-weight:600; font-family:'Fraunces',serif;}
+  .badge{
+    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:0.68rem;
+    padding:2px 8px; border-radius:20px; border:1px solid var(--line); color:var(--ink-soft);
+  }
+
+  /* ---------- ARTICLES ---------- */
+  .filter-row{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px;}
+  .filter-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:.05em;
+    background:transparent; border:1px solid var(--line); color:var(--ink-soft);
+    padding:7px 14px; border-radius:20px; cursor:pointer; transition:all .15s;
+  }
+  .filter-btn:hover{border-color:var(--ink);}
+  .filter-btn.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+  .article-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
+  @media (max-width:760px){.article-grid{grid-template-columns:1fr;}}
+  .article-card{
+    background:var(--card-bg); border:1px solid var(--line); border-radius:3px;
+    padding:20px; display:flex; flex-direction:column; gap:8px;
+    box-shadow:2px 2px 0 var(--shadow);
+  }
+  .article-card .kind{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; text-transform:uppercase; color:var(--amber-deep); letter-spacing:.05em;}
+  .article-card h4{font-size:1.05rem; margin:0;}
+  .article-card p{font-size:0.9rem; color:var(--ink-soft); margin:0;}
+  .article-card .src{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--ink-soft); margin-top:auto; padding-top:10px; border-top:1px dashed var(--line);}
+  .article-card a{text-decoration:none; font-weight:600;}
+  .article-card a:hover{text-decoration:underline;}
+
+  /* ---------- SOURCES ---------- */
+  .sources-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px;}
+  .sources-list li{
+    display:grid; grid-template-columns:100px 1fr; gap:16px;
+    padding-bottom:14px; border-bottom:1px dashed var(--line);
+  }
+  .sources-list li:last-child{border-bottom:none;}
+  .sources-list .tag{font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--ink-soft); text-transform:uppercase;}
+  .sources-list h4{font-size:0.98rem; margin:0 0 3px;}
+  .sources-list p{margin:0; font-size:0.85rem; color:var(--ink-soft);}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:40px 0 60px; }
+  .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .footer-note{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--ink-soft); max-width:60ch;}
+  .footer-note strong{color:var(--ink);}
+
+  .visually-hidden{position:absolute; width:1px;height:1px; overflow:hidden; clip:rect(0 0 0 0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ---------- IMAGEM DE CAPA (opcional) ----------
+     Para adicionar uma foto no topo do site, edite a tag <img id="heroImage">
+     no HTML: coloque a URL da imagem em src="" e apague style="display:none". */
+  .hero-image{
+    width:100%; max-height:320px; object-fit:cover;
+    border:1px solid var(--line); border-radius:4px; margin-bottom:28px;
+    box-shadow:4px 4px 0 var(--shadow);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-row">
+    <button type="button" class="brandmark" data-target="topo">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="12" cy="14" rx="6" ry="7.5" stroke="#23291F" stroke-width="1.4"/>
+        <circle cx="12" cy="6" r="3.2" stroke="#23291F" stroke-width="1.4"/>
+        <path d="M9 4.5L6 2M15 4.5L18 2M9 20.5L6.5 23M15 20.5L17.5 23M6 12H2M18 12H22" stroke="#B0702E" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+      Hexapoda&nbsp;/&nbsp;Aparelho&nbsp;Bucal
+    </button>
+    <nav class="links">
+      <button type="button" data-target="anatomia">Anatomia</button>
+      <button type="button" data-target="tipos">Tipos</button>
+      <button type="button" data-target="distribuicao">Distribuição</button>
+      <button type="button" data-target="artigos">Artigos</button>
+      <button type="button" data-target="fontes">Fontes</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div id="topo"></div>
+  <section class="hero wrap">
+    <div class="hero-tag"><span class="dot"></span> Material complementar de apresentação</div>
+    <!-- Para adicionar uma imagem de capa: cole a URL em src="" e apague style="display:none" -->
+    <img id="heroImage" class="hero-image" src="" alt="Imagem de capa" style="display:none">
+    <h1 class="hero-title" data-editable="heroTitle">O aparelho bucal como chave adaptativa dos hexápodes</h1>
+    <p class="hero-sub" data-editable="heroSub">
+      A radiação dos hexápodes sobre praticamente todos os ambientes terrestres está ligada, em grande parte,
+      à plasticidade de um único conjunto de estruturas: labro, mandíbulas, maxilas, hipofaringe e lábio.
+      A partir de um plano corporal ancestral mastigador, esses apêndices se modificaram repetidas vezes
+      para perfurar, sugar, lamber e filtrar — moldando dietas, hábitos e até a transmissão de doenças.
+    </p>
+    <div class="hero-meta">
+      <div><strong>3</strong>categorias funcionais principais</div>
+      <div><strong>6</strong>modificações detalhadas neste catálogo</div>
+      <div><strong>10+</strong>ordens de Hexapoda contempladas</div>
+    </div>
+  </section>
+
+  <!-- ANATOMIA GERAL -->
+  <section id="anatomia" class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Base morfológica</span>
+        <h2 data-editable="anatomiaTitle">As cinco peças fundamentais</h2>
+        <p data-editable="anatomiaDesc">Todo aparelho bucal de hexápode — por mais modificado que esteja — deriva do mesmo conjunto de estruturas. Reconhecê-las é o primeiro passo para interpretar qualquer variação.</p>
+      </div>
+    </div>
+    <div class="anatomy-grid">
+      <div class="diagram-frame">
+        <svg viewBox="0 0 520 380" xmlns="http://www.w3.org/2000/svg">
+          <!-- head capsule -->
+          <ellipse cx="260" cy="170" rx="150" ry="130" fill="#F4EEDD" stroke="#23291F" stroke-width="2"/>
+          <!-- clypeus/labrum -->
+          <path d="M180 120 Q260 90 340 120 L340 150 Q260 130 180 150 Z" fill="#DED2B2" stroke="#23291F" stroke-width="1.5"/>
+          <text x="360" y="115" font-family="IBM Plex Mono" font-size="12" fill="#8A5620">1</text>
+          <!-- mandibles -->
+          <path d="M175 165 Q140 175 130 205 Q160 210 190 190 Z" fill="none" stroke="#8C2F39" stroke-width="2.2"/>
+          <path d="M345 165 Q380 175 390 205 Q360 210 330 190 Z" fill="none" stroke="#8C2F39" stroke-width="2.2"/>
+          <text x="105" y="215" font-family="IBM Plex Mono" font-size="12" fill="#8C2F39">2</text>
+          <!-- maxillae with palps -->
+          <path d="M195 210 Q180 250 200 275" fill="none" stroke="#566246" stroke-width="2"/>
+          <path d="M325 210 Q340 250 320 275" fill="none" stroke="#566246" stroke-width="2"/>
+          <circle cx="200" cy="277" r="3.5" fill="#566246"/>
+          <circle cx="320" cy="277" r="3.5" fill="#566246"/>
+          <text x="170" y="260" font-family="IBM Plex Mono" font-size="12" fill="#566246">3</text>
+          <!-- labium -->
+          <path d="M230 235 Q260 260 290 235 L290 275 Q260 300 230 275 Z" fill="#DED2B2" stroke="#23291F" stroke-width="1.5"/>
+          <text x="300" y="290" font-family="IBM Plex Mono" font-size="12" fill="#4A5142">5</text>
+          <!-- hypopharynx (central, dashed to indicate internal) -->
+          <line x1="260" y1="185" x2="260" y2="250" stroke="#B0702E" stroke-width="1.6" stroke-dasharray="3 3"/>
+          <text x="266" y="220" font-family="IBM Plex Mono" font-size="12" fill="#B0702E">4</text>
+          <!-- eyes for orientation -->
+          <circle cx="150" cy="120" r="14" fill="none" stroke="#23291F" stroke-width="1.5"/>
+          <circle cx="370" cy="120" r="14" fill="none" stroke="#23291F" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <ul class="anatomy-list">
+        <li><span class="idx">01</span><div><h4>Labro</h4><p>Placa anterior articulada ao clípeo; funciona como "lábio superior", ajudando a conter o alimento.</p></div></li>
+        <li><span class="idx">02</span><div><h4>Mandíbulas</h4><p>Par de peças esclerotizadas que se movem lateralmente (não verticalmente). É a estrutura ancestral de corte e trituração.</p></div></li>
+        <li><span class="idx">03</span><div><h4>Maxilas</h4><p>Par de apêndices segmentados com palpos maxilares sensoriais; auxiliam na manipulação do alimento.</p></div></li>
+        <li><span class="idx">04</span><div><h4>Hipofaringe</h4><p>Estrutura mediana interna, associada à abertura das glândulas salivares.</p></div></li>
+        <li><span class="idx">05</span><div><h4>Lábio</h4><p>"Lábio inferior", resultado da fusão de um par de apêndices ancestrais; porta os palpos labiais.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TIPOS DE APARELHO BUCAL -->
+  <section id="tipos" class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Catálogo de espécimes</span>
+        <h2 data-editable="tiposTitle">Seis modificações do aparelho bucal</h2>
+        <p data-editable="tiposDesc">Toque em um espécime para abrir a ficha completa, com esquema morfológico, função e táxons representativos.</p>
+      </div>
+    </div>
+
+    <div class="drawer" id="drawer"></div>
+    <div class="detail-panel" id="detailPanel"></div>
+  </section>
+
+  <!-- ORIENTAÇÃO DA CABEÇA -->
+  <section id="orientacao" class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Complemento</span>
+        <h2 data-editable="orientacaoTitle">Orientação das peças bucais</h2>
+        <p data-editable="orientacaoDesc">Além do tipo funcional, a posição do aparelho bucal em relação ao eixo do corpo também é diagnóstica.</p>
+      </div>
+    </div>
+    <div class="orient-grid">
+      <div class="orient-card">
+        <svg viewBox="0 0 160 140"><ellipse cx="80" cy="55" rx="55" ry="42" fill="#F4EEDD" stroke="#23291F" stroke-width="2"/><path d="M60 95 L80 120 L100 95" fill="none" stroke="#8C2F39" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <h4>Hipognato</h4>
+        <p>Peças voltadas para baixo (ventral). Ex.: gafanhotos, formigas.</p>
+      </div>
+      <div class="orient-card">
+        <svg viewBox="0 0 160 140"><ellipse cx="80" cy="70" rx="55" ry="42" fill="#F4EEDD" stroke="#23291F" stroke-width="2"/><path d="M120 55 L150 65 L120 80" fill="none" stroke="#8C2F39" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <h4>Prógnato</h4>
+        <p>Peças voltadas para a frente. Ex.: cupins, tesourinhas, larvas predadoras.</p>
+      </div>
+      <div class="orient-card">
+        <svg viewBox="0 0 160 140"><ellipse cx="80" cy="70" rx="55" ry="42" fill="#F4EEDD" stroke="#23291F" stroke-width="2"/><path d="M95 100 L120 130" fill="none" stroke="#8C2F39" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <h4>Opistognato</h4>
+        <p>Peças voltadas posteriormente, quase paralelas ao corpo. Ex.: barbeiros (Reduviidae).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISTRIBUIÇÃO TAXONÔMICA -->
+  <section id="distribuicao" class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Referência rápida</span>
+        <h2 data-editable="distribuicaoTitle">Distribuição por ordem</h2>
+        <p data-editable="distribuicaoDesc">Panorama não exaustivo — muitas ordens apresentam exceções e variações entre estágios de vida.</p>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Ordem</th><th>Nome popular</th><th>Aparelho bucal predominante</th></tr></thead>
+        <tbody id="taxTable"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ARTIGOS E DIVULGAÇÃO -->
+  <section id="artigos" class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Divulgação científica</span>
+        <h2 data-editable="artigosTitle">Artigos e leituras selecionadas</h2>
+        <p data-editable="artigosDesc">Curadoria de textos acadêmicos e materiais de divulgação sobre morfologia e alimentação em hexápodes.</p>
+      </div>
+    </div>
+    <div class="filter-row" id="filterRow"></div>
+    <div class="article-grid" id="articleGrid"></div>
+  </section>
+
+  <!-- FONTES -->
+  <section id="fontes" class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Transparência</span>
+        <h2 data-editable="fontesTitle">Fontes consultadas na elaboração deste catálogo</h2>
+        <p data-editable="fontesDesc">Terminologia e classificação seguem principalmente estas referências.</p>
+      </div>
+    </div>
+    <ul class="sources-list" id="sourcesList"></ul>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="footer-row">
+    <div class="footer-note" data-editable="footerNote">Conteúdo mantido e revisado pelo autor da apresentação. Sugestões de correção podem ser enviadas por e-mail.</div>
+    <div class="footer-note" id="lastUpdated"></div>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   DADOS DO SITE — EDITE AQUI
+   =====================================================================
+   Para mudar textos de espécimes, a tabela, artigos ou fontes, edite
+   apenas os valores entre aspas nos arrays abaixo (mouthpartTypes,
+   taxonomyRows, articles, sources). Não precisa mexer no resto do
+   arquivo. Depois de editar no GitHub, clique em "Commit changes" —
+   o GitHub Pages atualiza o site sozinho em 1-2 minutos.
+   ===================================================================== */
+
+const mouthpartTypes = [
+  {
+    id: "mastigador",
+    catno: "ESP. 01",
+    name: "Mastigador",
+    pin: "#566246",
+    glyph: `<path d="M6 20 Q16 24 26 20 M6 20 L2 14 Q10 12 6 20 M26 20 L30 14 Q22 12 26 20" stroke="#566246" stroke-width="2" fill="none" stroke-linecap="round"/>`,
+    diagram: `<svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="150" cy="130" rx="110" ry="95" fill="#F4EEDD" stroke="#23291F" stroke-width="2"/>
+      <path d="M95 120 Q60 130 50 160 Q85 165 115 145 Z" fill="none" stroke="#8C2F39" stroke-width="3"/>
+      <path d="M205 120 Q240 130 250 160 Q215 165 185 145 Z" fill="none" stroke="#8C2F39" stroke-width="3"/>
+      <circle cx="100" cy="80" r="12" fill="none" stroke="#23291F" stroke-width="1.5"/>
+      <circle cx="200" cy="80" r="12" fill="none" stroke="#23291F" stroke-width="1.5"/>
+    </svg>`,
+    example: "Gafanhotos · besouros · baratas",
+    tags: ["Orthoptera","Coleoptera","Blattodea","Odonata"],
+    func: "Mandíbulas robustas e esclerotizadas se movem lateralmente para cortar e triturar alimento sólido. É considerado o tipo ancestral — todas as demais formas derivam dele por modificação de peças homólogas."
+  },
+  {
+    id: "lambedor",
+    catno: "ESP. 02",
+    name: "Mastigador-lambedor",
+    pin: "#B0702E",
+    glyph: `<path d="M6 22 Q14 24 22 20 M6 22 L3 17 Q9 15 6 22" stroke="#B0702E" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M20 20 Q28 12 30 6" stroke="#B0702E" stroke-width="2" fill="none" stroke-linecap="round"/>`,
+    diagram: `<svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="150" cy="120" rx="105" ry="90" fill="#F4EEDD" stroke="#23291F" stroke-width="2"/>
+      <path d="M105 115 Q80 122 72 145 Q95 148 118 132 Z" fill="none" stroke="#8C2F39" stroke-width="2.5"/>
+      <path d="M160 150 Q175 200 165 240" fill="none" stroke="#B0702E" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="105" cy="75" r="11" fill="none" stroke="#23291F" stroke-width="1.5"/>
+      <circle cx="195" cy="75" r="11" fill="none" stroke="#23291F" stroke-width="1.5"/>
+    </svg>`,
+    example: "Abelhas e mamangavas",
+    tags: ["Hymenoptera","Apidae"],
+    func: "Mandíbulas ainda funcionais — usadas para manipular cera e outros materiais — combinadas com maxilas e lábio alongados que formam uma glossa em forma de língua para lamber néctar e outros líquidos açucarados."
+  },
+  {
+    id: "espirotromba",
+    catno: "ESP. 03",
+    name: "Sugador-maxilar (espirotromba)",
+    pin: "#8A5620",
+    glyph: `<path d="M16 6 Q28 8 26 18 Q24 26 14 24 Q8 22 10 16" stroke="#8A5620" stroke-width="2" fill="none" stroke-linecap="round"/>`,
+    diagram: `<svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="150" cy="110" rx="100" ry="85" fill="#F4EEDD" stroke="#23291F" stroke-width="2"/>
+      <path d="M150 165 C 190 170, 200 200, 175 215 C 150 230, 130 210, 145 195 C 155 185, 170 195, 165 205" fill="none" stroke="#B0702E" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="105" cy="70" r="11" fill="none" stroke="#23291F" stroke-width="1.5"/>
+      <circle cx="195" cy="70" r="11" fill="none" stroke="#23291F" stroke-width="1.5"/>
+    </svg>`,
+    example: "Borboletas e mariposas (adultos)",
+    tags: ["Lepidoptera"],
+    func: "Mandíbulas ausentes; as gáleas das maxilas se alongam e se acoplam formando um tubo espiralado (probóscide), usado para sugar néctar. Não há canal salivar independente. Curiosamente, as larvas (lagartas) têm aparelho mastigador."
+  },
+  {
+    id: "picador",
+    catno: "ESP. 04",
+    name: "Sugador-labial pungitivo",
+    pin: "#8C2F39",
+    glyph: `<line x1="6" y1="26" x2="26" y2="6" stroke="#8C2F39" stroke-width="2.4" stroke-linecap="round"/><path d="M22 6 L28 8 L26 12" fill="none" stroke="#8C2F39" stroke-width="1.6"/>`,
+    diagram: `<svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="140" cy="100" rx="95" ry="80" fill="#F4EEDD" stroke="#23291F" stroke-width="2"/>
+      <line x1="150" y1="150" x2="205" y2="235" stroke="#8C2F39" stroke-width="4" stroke-linecap="round"/>
+      <line x1="150" y1="150" x2="205" y2="235" stroke="#23291F" stroke-width="1" stroke-dasharray="2 4" transform="translate(-3,0)"/>
+      <circle cx="100" cy="62" r="10" fill="none" stroke="#23291F" stroke-width="1.5"/>
+      <circle cx="180" cy="62" r="10" fill="none" stroke="#23291F" stroke-width="1.5"/>
+    </svg>`,
+    example: "Percevejos · cigarras · mosquitos · barbeiros",
+    tags: ["Hemiptera","Culicidae","Reduviidae"],
+    func: "Mandíbulas e maxilas transformadas em estiletes finos e rígidos, alojados dentro de uma bainha labial (rostro) que não perfura — apenas guia os estiletes até o tecido vegetal ou animal. Grupo de grande importância médica e agrícola por incluir vetores de patógenos."
+  },
+  {
+    id: "esponjoso",
+    catno: "ESP. 05",
+    name: "Sugador-labial não pungitivo",
+    pin: "#4A5142",
+    glyph: `<ellipse cx="16" cy="18" rx="10" ry="7" stroke="#4A5142" stroke-width="2" fill="none"/><line x1="9" y1="18" x2="23" y2="18" stroke="#4A5142" stroke-width="1.2"/><line x1="10" y1="15" x2="22" y2="15" stroke="#4A5142" stroke-width="0.8"/><line x1="10" y1="21" x2="22" y2="21" stroke="#4A5142" stroke-width="0.8"/>`,
+    diagram: `<svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="140" cy="100" rx="95" ry="80" fill="#F4EEDD" stroke="#23291F" stroke-width="2"/>
+      <ellipse cx="150" cy="195" rx="42" ry="26" fill="none" stroke="#4A5142" stroke-width="2.5"/>
+      <line x1="115" y1="195" x2="185" y2="195" stroke="#4A5142" stroke-width="1"/>
+      <line x1="120" y1="185" x2="180" y2="185" stroke="#4A5142" stroke-width="0.8"/>
+      <line x1="120" y1="205" x2="180" y2="205" stroke="#4A5142" stroke-width="0.8"/>
+      <line x1="150" y1="150" x2="150" y2="169" stroke="#23291F" stroke-width="2"/>
+      <circle cx="100" cy="62" r="10" fill="none" stroke="#23291F" stroke-width="1.5"/>
+      <circle cx="180" cy="62" r="10" fill="none" stroke="#23291F" stroke-width="1.5"/>
+    </svg>`,
+    example: "Moscas domésticas e a maioria dos dípteros",
+    tags: ["Diptera","Muscidae"],
+    func: "O lábio termina em uma estrutura almofadada e bilobada, a labela, percorrida por sulcos (pseudotraqueias) que canalizam líquidos por capilaridade. Sem estiletes perfurantes; algumas espécies secretam saliva para dissolver alimento sólido antes de sugá-lo."
+  },
+  {
+    id: "filtrador",
+    catno: "ESP. 06",
+    name: "Filtrador (larvas aquáticas)",
+    pin: "#B0702E",
+    glyph: `<path d="M6 10 v16 M11 8 v20 M16 6 v24 M21 8 v20 M26 10 v16" stroke="#B0702E" stroke-width="1.8" stroke-linecap="round"/>`,
+    diagram: `<svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="140" cy="120" rx="95" ry="85" fill="#F4EEDD" stroke="#23291F" stroke-width="2"/>
+      <line x1="95" y1="95" x2="95" y2="150" stroke="#B0702E" stroke-width="2"/>
+      <line x1="110" y1="90" x2="110" y2="155" stroke="#B0702E" stroke-width="2"/>
+      <line x1="125" y1="88" x2="125" y2="158" stroke="#B0702E" stroke-width="2"/>
+      <line x1="140" y1="90" x2="140" y2="155" stroke="#B0702E" stroke-width="2"/>
+      <line x1="155" y1="95" x2="155" y2="150" stroke="#B0702E" stroke-width="2"/>
+      <circle cx="90" cy="70" r="9" fill="none" stroke="#23291F" stroke-width="1.5"/>
+      <circle cx="160" cy="70" r="9" fill="none" stroke="#23291F" stroke-width="1.5"/>
+    </svg>`,
+    example: "Larvas de Simuliidae · náiades filtradoras de Ephemeroptera",
+    tags: ["Diptera (larva)","Ephemeroptera"],
+    func: "Terceira categoria funcional, além de mandibulado e haustelado: cerdas ou estruturas em pente filtram partículas orgânicas suspensas na água, típicas de estágios imaturos aquáticos."
+  }
+];
+
+let taxonomyRows = [
+  ["Odonata","Libélulas e donzelinhas","Mastigador (adulto e náiade predadora)"],
+  ["Orthoptera","Gafanhotos, grilos e esperanças","Mastigador"],
+  ["Blattodea","Baratas e cupins","Mastigador"],
+  ["Coleoptera","Besouros","Mastigador"],
+  ["Hemiptera","Percevejos, cigarras, pulgões","Sugador-labial pungitivo"],
+  ["Lepidoptera","Borboletas e mariposas","Sugador-maxilar (adulto) · Mastigador (larva)"],
+  ["Diptera","Moscas e mosquitos","Sugador-labial não pungitivo · pungitivo (hematófagos)"],
+  ["Hymenoptera","Abelhas, formigas e vespas","Mastigador-lambedor (abelhas) · Mastigador (formigas, vespas)"],
+  ["Siphonaptera","Pulgas","Sugador-labial pungitivo"],
+  ["Ephemeroptera","Efêmeras","Mastigador ou filtrador (náiade) · vestigial (adulto)"]
+];
+
+let articles = [
+  {
+    kind:"Capítulo acadêmico",
+    tags:["Morfologia","Referência"],
+    title:"Form and Function of Insect Mouthparts",
+    desc:"Capítulo de referência que descreve a morfologia geral do aparelho bucal em Hexapoda e propõe a divisão em três categorias funcionais: mandibulado, haustelado e filtrador.",
+    src:"Springer Nature Link",
+    url:"https://link.springer.com/chapter/10.1007/978-3-030-29654-4_2"
+  },
+  {
+    kind:"Material didático",
+    tags:["Morfologia","Introdutório"],
+    title:"Mouthparts — General Entomology (ENT 425)",
+    desc:"Guia introdutório em inglês, com boa didática visual, sobre os cinco componentes básicos do aparelho bucal e suas modificações funcionais.",
+    src:"NC State University",
+    url:"https://genent.cals.ncsu.edu/bug-bytes/mouthparts/"
+  },
+  {
+    kind:"Acervo acadêmico (PT-BR)",
+    tags:["Morfologia","Referência","Português"],
+    title:"Morfologia Externa — Coleção Virtual de Entomologia",
+    desc:"Material da UFSCar descrevendo, em português, os principais tipos de aparelho bucal (mastigador, lambedor, sugador-maxilar, sugador-labial pungitivo e não pungitivo) com ilustrações.",
+    src:"UFSCar",
+    url:"http://www.cvi.ufscar.br/morfologia.html"
+  },
+  {
+    kind:"Artigo de periódico",
+    tags:["Anatomia comparada","Português"],
+    title:"Anatomia comparada do aparelho bucal de espécies de insetos",
+    desc:"Artigo em periódico brasileiro revisado por pares que compara adaptações morfológicas do aparelho bucal a diferentes hábitos alimentares.",
+    src:"ConScientiae Saúde",
+    url:"https://periodicos.uninove.br/saude/article/download/1048/1033/4913"
+  },
+  {
+    kind:"Divulgação científica",
+    tags:["Introdutório","Português"],
+    title:"Aparelho bucal dos insetos e a tromba da borboleta",
+    desc:"Texto de divulgação em português sobre a diversidade de aparelhos bucais, com foco na espirotromba de Lepidoptera.",
+    src:"Sinapse",
+    url:"https://emsinapse.wordpress.com/2018/09/02/aparelho-bucal-dos-insetos-e-a-tromba-da-borboleta/"
+  },
+  {
+    kind:"Guia de campo",
+    tags:["Taxonomia","Referência"],
+    title:"Guide to Insect and Non-Insect Arthropods",
+    desc:"Tabela de referência cruzando ordens de insetos, metamorfose e tipo de aparelho bucal em estágios adulto e juvenil.",
+    src:"Texas A&M AgriLife / 4-H Entomology",
+    url:"https://agrilife.org/wharton4h/files/2018/10/Guide-to-Insect-and-Non-Insect-Orders.pdf"
+  }
+  // Adicione novos artigos aqui seguindo o mesmo formato.
+];
+
+let sources = [
+  {tag:"Capítulo", title:"Form and Function of Insect Mouthparts", note:"Büsse et al. — descreve a categorização funcional em três grupos (mandibulado, haustelado, filtrador) usada como base neste catálogo."},
+  {tag:"Guia", title:"Mouthparts — ENT 425, NC State University", note:"Base para a nomenclatura das cinco peças fundamentais (labro, mandíbulas, maxilas, hipofaringe, lábio)."},
+  {tag:"Acervo", title:"Coleção Virtual de Entomologia, UFSCar", note:"Referência para a terminologia em português (mastigador, lambedor, sugador-maxilar, sugador-labial pungitivo/não pungitivo)."},
+  {tag:"Periódico", title:"ConScientiae Saúde, 2008", note:"Suporte para a discussão sobre correlação entre morfologia bucal e hábito alimentar."},
+  {tag:"Guia", title:"4-H Entomology Study Materials, Texas A&M AgriLife", note:"Base para a tabela de distribuição taxonômica por ordem."}
+];
+
+/* ===================== ESTADO GLOBAL ===================== */
+let currentTypeId = mouthpartTypes[0].id;
+let activeFilter = "Todos";
+
+const drawer = document.getElementById('drawer');
+const detailPanel = document.getElementById('detailPanel');
+
+/* ===================== RENDER: ESPÉCIMES ===================== */
+function renderDrawer(){
+  drawer.innerHTML = mouthpartTypes.map(t => `
+    <button class="card" data-id="${t.id}" aria-expanded="false">
+      <span class="pin" style="background:${t.pin}"></span>
+      <svg class="glyph" viewBox="0 0 34 30">${t.glyph}</svg>
+      <span class="catno">${t.catno}</span>
+      <h3>${t.name}</h3>
+      <span class="example">${t.example}</span>
+    </button>
+  `).join('');
+  drawer.querySelectorAll('.card').forEach(btn=>{
+    btn.addEventListener('click', ()=> selectType(btn.dataset.id));
+  });
+}
+
+function selectType(id){
+  currentTypeId = id;
+  const t = mouthpartTypes.find(x=>x.id===id);
+  document.querySelectorAll('#drawer .card').forEach(c=>{
+    const isActive = c.dataset.id === id;
+    c.classList.toggle('active', isActive);
+    c.setAttribute('aria-expanded', isActive);
+  });
+  detailPanel.innerHTML = `
+    <div class="detail-grid">
+      <div>
+        <div class="diagram-frame" style="box-shadow:none; padding:10px;">${t.diagram}</div>
+        ${t.photo ? `<img src="${t.photo}" alt="Foto de ${t.name}" style="width:100%;border-radius:4px;margin-top:10px;border:1px solid var(--line);">` : ''}
+      </div>
+      <div>
+        <span class="catno">${t.catno}</span>
+        <h3>${t.name}</h3>
+        <div class="taglist">${t.tags.map(tag=>`<span>${tag}</span>`).join('')}</div>
+        <p><strong>Exemplos:</strong> ${t.example}</p>
+        <div class="func"><strong>Função e morfologia —</strong> ${t.func}</div>
+      </div>
+    </div>
+  `;
+  detailPanel.classList.add('show');
+  detailPanel.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+/* ===================== RENDER: TABELA TAXONÔMICA ===================== */
+function renderTable(){
+  document.getElementById('taxTable').innerHTML = taxonomyRows.map(r=>`
+    <tr><td class="order-name">${r[0]}</td><td>${r[1]}</td><td><span class="badge">${r[2]}</span></td></tr>
+  `).join('');
+}
+
+/* ===================== RENDER: ARTIGOS ===================== */
+function renderFilters(){
+  const allTags = ["Todos", ...new Set(articles.flatMap(a=>a.tags))];
+  const row = document.getElementById('filterRow');
+  row.innerHTML = allTags.map(tag=>`
+    <button class="filter-btn ${tag===activeFilter?'active':''}" data-tag="${tag}">${tag}</button>
+  `).join('');
+  row.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      activeFilter = btn.dataset.tag;
+      renderFilters();
+      renderArticles();
+    });
+  });
+}
+
+function renderArticles(){
+  const list = activeFilter==="Todos" ? articles : articles.filter(a=>a.tags.includes(activeFilter));
+  document.getElementById('articleGrid').innerHTML = list.map(a=>`
+    <article class="article-card">
+      <span class="kind">${a.kind}</span>
+      <h4><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></h4>
+      <p>${a.desc}</p>
+      <span class="src">Fonte: ${a.src}</span>
+    </article>
+  `).join('') || '<p style="color:var(--ink-soft)">Nenhum artigo para este filtro ainda.</p>';
+}
+
+/* ===================== RENDER: FONTES ===================== */
+function renderSources(){
+  document.getElementById('sourcesList').innerHTML = sources.map(s=>`
+    <li><span class="tag">${s.tag}</span><div><h4>${s.title}</h4><p>${s.note}</p></div></li>
+  `).join('');
+}
+
+/* ===================== RENDERIZAÇÃO GERAL ===================== */
+function renderAll(){
+  renderDrawer();
+  renderTable();
+  renderFilters();
+  renderArticles();
+  renderSources();
+  selectType(currentTypeId);
+}
+renderAll();
+
+document.getElementById('lastUpdated').textContent =
+  "Última atualização: " + new Date().toLocaleDateString('pt-BR', {day:'2-digit', month:'long', year:'numeric'});
+
+/* ===================== NAVEGAÇÃO DO TOPO ===================== */
+// Os itens do menu são <button> (não <a href="#...">) para rolar até a seção
+// de mesmo id sem qualquer tipo de navegação de página.
+document.querySelectorAll('[data-target]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const target = document.getElementById(btn.dataset.target);
+    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+</script>
+</body>
+</html>
