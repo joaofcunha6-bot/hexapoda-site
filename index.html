@@ -43,11 +43,11 @@
     /* Controla a imagem na lateral */
     .hero-image {
         flex: 1;
-        max-width: 450px;
+        max-width: 450px; /* Mantém o limite de largura para não estourar */
         width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 8px;
+        height: auto;       /* Força a altura a acompanhar a proporção real da foto */
+        object-fit: contain; /* Exibe a imagem inteira dentro do espaço disponível, sem cortes */
+        border-radius: 8px; 
         box-shadow: var(--shadow);
     }
 
