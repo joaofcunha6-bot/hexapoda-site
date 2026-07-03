@@ -43,11 +43,11 @@
     /* Controla a imagem na lateral */
     .hero-image {
         flex: 1;
-        max-width: 450px; /* Mantém o limite de largura para não estourar */
+        max-width: 350px;       /* Ajustei o limite máximo de largura para se adequar melhor ao formato vertical */
         width: 100%;
-        height: auto;       /* Força a altura a acompanhar a proporção real da foto */
-        object-fit: contain; /* Exibe a imagem inteira dentro do espaço disponível, sem cortes */
-        border-radius: 8px; 
+        aspect-ratio: 2 / 3;    /* Força a proporção exata de 2 de largura por 3 de altura */
+        object-fit: cover;      /* Preenche a caixa inteira na proporção correta sem achatar a anatomia */
+        border-radius: 8px;     /* Mantém os cantos arredondados elegantes */
         box-shadow: var(--shadow);
     }
 
