@@ -41,19 +41,44 @@
     }
 
 /* Controla a imagem na lateral com proporção 2:3 (Aumentada) */
-    .hero-image {
-        flex: 1.5;              /* Dá um pouco mais de peso/espaço para a área da imagem */
-        max-width: 480px;       /* Aumentei de 350px para 480px para ela ficar maior e mais visível */
-        width: 100%;
-        aspect-ratio: 2 / 3;    /* Mantém a sua proporção de 2 de largura por 3 de altura */
-        object-fit: cover;      /* Preenche perfeitamente sem distorcer os insetos */
-        border-radius: 8px;     
-        box-shadow: var(--shadow);
+   /* Força o contêiner a aceitar o alinhamento lado a lado sem frescura */
+    .hero.wrap {
+        display: flex !important;
+        flex-direction: row-reverse !important; 
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 50px !important;
+        max-width: 1200px !important; /* Permite que o bloco todo se estique mais na tela */
+        width: 100% !important;
     }
 
-    /* Ajuste do bloco de texto para equilibrar o tamanho com a nova imagem */
+    /* Força a imagem a crescer de verdade */
+    .hero-image {
+        flex: 2 !important;              /* Dá o dobro de peso visual para a imagem em relação ao texto */
+        width: 500px !important;          /* Define uma largura estática grande de 500px para ela parar de encolher */
+        max-width: 100% !important;       /* Garante que ela só reduza se a tela for menor que ela */
+        aspect-ratio: 2 / 3 !important;   /* Trava na sua proporção de 2 de largura por 3 de altura */
+        object-fit: cover !important;     
+        border-radius: 8px !important;     
+        box-shadow: var(--shadow) !important;
+    }
+
+    /* Controla o bloco de texto para ele não esmagar a imagem */
     .hero-texto-bloco {
-        flex: 1;                /* Equilibra o espaço irmão com a imagem maior */
+        flex: 1.5 !important;
+        width: 100% !important;
+    }
+
+    /* Mantém a segurança para celulares */
+    @media (max-width: 900px) {
+        .hero.wrap {
+            flex-direction: column-reverse !important;
+            gap: 30px !important;
+        }
+        .hero-image {
+            width: 100% !important;
+            max-width: 400px !important; /* No celular ela fica menorzinha pra caber na tela */
+        }
     }
 
     /* Regra de segurança para a outra imagem do site */
