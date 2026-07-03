@@ -22,6 +22,16 @@
     --line: #B0C2B2;          /* Cor para as linhas finas divisórias */
     --card-bg: #E4ECE4;       /* Fundo dos blocos de conteúdo */
     --shadow: rgba(15, 26, 17, 0.12);
+    /* ... o código que aparece na sua imagem termina aqui ... */
+    --shadow: rgba(15, 26, 17, 0.12);
+}
+
+/* DEIXE ISSO AQUI EMBAIXO PARA RECONHECER A SUA NOVA FOTO: */
+.diagrama-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
   
   }
 
@@ -364,37 +374,12 @@
         <span class="eyebrow">Base morfológica</span>
         <h2 data-editable="anatomiaTitle">As cinco peças fundamentais</h2>
         <p data-editable="anatomiaDesc">Todo aparelho bucal de hexápode — por mais modificado que esteja — deriva do mesmo conjunto de estruturas. Reconhecê-las é o primeiro passo para interpretar qualquer variação.</p>
-      </div>
+  <div class="anatomy-grid">
+    <div class="diagram-frame">
+        <!-- Nova imagem do aparelho bucal cadastrada como PNG -->
+        <img src="aparelhobucal.png" alt="Diagrama esquemático do aparelho bucal dos hexápodes" class="diagrama-img">
     </div>
-    <div class="anatomy-grid">
-      <div class="diagram-frame">
-        <svg viewBox="0 0 520 380" xmlns="http://www.w3.org/2000/svg">
-          <!-- head capsule -->
-          <ellipse cx="260" cy="170" rx="150" ry="130" fill="#F4EEDD" stroke="#23291F" stroke-width="2"/>
-          <!-- clypeus/labrum -->
-          <path d="M180 120 Q260 90 340 120 L340 150 Q260 130 180 150 Z" fill="#DED2B2" stroke="#23291F" stroke-width="1.5"/>
-          <text x="360" y="115" font-family="IBM Plex Mono" font-size="12" fill="#8A5620">1</text>
-          <!-- mandibles -->
-          <path d="M175 165 Q140 175 130 205 Q160 210 190 190 Z" fill="none" stroke="#8C2F39" stroke-width="2.2"/>
-          <path d="M345 165 Q380 175 390 205 Q360 210 330 190 Z" fill="none" stroke="#8C2F39" stroke-width="2.2"/>
-          <text x="105" y="215" font-family="IBM Plex Mono" font-size="12" fill="#8C2F39">2</text>
-          <!-- maxillae with palps -->
-          <path d="M195 210 Q180 250 200 275" fill="none" stroke="#566246" stroke-width="2"/>
-          <path d="M325 210 Q340 250 320 275" fill="none" stroke="#566246" stroke-width="2"/>
-          <circle cx="200" cy="277" r="3.5" fill="#566246"/>
-          <circle cx="320" cy="277" r="3.5" fill="#566246"/>
-          <text x="170" y="260" font-family="IBM Plex Mono" font-size="12" fill="#566246">3</text>
-          <!-- labium -->
-          <path d="M230 235 Q260 260 290 235 L290 275 Q260 300 230 275 Z" fill="#DED2B2" stroke="#23291F" stroke-width="1.5"/>
-          <text x="300" y="290" font-family="IBM Plex Mono" font-size="12" fill="#4A5142">5</text>
-          <!-- hypopharynx (central, dashed to indicate internal) -->
-          <line x1="260" y1="185" x2="260" y2="250" stroke="#B0702E" stroke-width="1.6" stroke-dasharray="3 3"/>
-          <text x="266" y="220" font-family="IBM Plex Mono" font-size="12" fill="#B0702E">4</text>
-          <!-- eyes for orientation -->
-          <circle cx="150" cy="120" r="14" fill="none" stroke="#23291F" stroke-width="1.5"/>
-          <circle cx="370" cy="120" r="14" fill="none" stroke="#23291F" stroke-width="1.5"/>
-        </svg>
-      </div>
+</div>
       <ul class="anatomy-list">
         <li><span class="idx">01</span><div><h4>Labro</h4><p>Placa anterior articulada ao clípeo; funciona como "lábio superior", ajudando a conter o alimento.</p></div></li>
         <li><span class="idx">02</span><div><h4>Mandíbulas</h4><p>Par de peças esclerotizadas que se movem lateralmente (não verticalmente). É a estrutura ancestral de corte e trituração.</p></div></li>
