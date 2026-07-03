@@ -26,18 +26,53 @@
     /* =======================================================
        NOVO: COLOCA A IMAGEM AO LADO DO TEXTO (HERO)
     ========================================================== */
+    ./* Estrutura principal: divide a tela entre Texto (Esquerda) e Galeria (Direita) */
     .hero.wrap {
-        display: flex;
-        flex-direction: row-reverse; /* Texto na esquerda, imagem na direita */
-        align-items: center;
-        justify-content: space-between;
-        gap: 40px;
-        margin-top: 40px;
+        display: flex !important;
+        flex-direction: row !important; 
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 50px !important;
+        max-width: 1200px !important;
+        width: 100% !important;
+        margin: 40px auto !important;
     }
 
-    /* Controla o bloco de texto */
+    /* Define o espaço do bloco de texto */
     .hero-texto-bloco {
-        flex: 1.2;
+        flex: 1.2 !important;
+        width: 100% !important;
+    }
+
+    /* Cria a grade de 2 colunas para as 6 imagens */
+    .hero-galeria-grid {
+        flex: 1 !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 colunas iguais */
+        gap: 15px !important; /* Espaço entre as fotos */
+        max-width: 500px !important;
+        width: 100% !important;
+    }
+
+    /* Estilização individual de cada uma das 6 fotos */
+    .galeria-foto-item {
+        width: 100% !important;
+        aspect-ratio: 1 / 1 !important; /* Força as fotos a ficarem quadradinhas e simétricas */
+        object-fit: cover !important;   /* Corta os excessos sem distorcer o inseto */
+        border-radius: 6px !important;   /* Cantos levemente arredondados */
+        box-shadow: var(--shadow) !important;
+        display: block !important;
+    }
+
+    /* Ajuste para telas de celular (bota a galeria embaixo do texto) */
+    @media (max-width: 900px) {
+        .hero.wrap {
+            flex-direction: column !important;
+            gap: 30px !important;
+        }
+        .hero-galeria-grid {
+            max-width: 100% !important;
+        }
     }
 
 /* Controla a imagem na lateral com proporção 2:3 (Aumentada) */
