@@ -117,19 +117,42 @@
         }
     }
 
-    /* Regra de segurança para a outra imagem do site */
-    .diagrama-img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 8px;
+    /* =======================================================
+       INVERSÃO DA SEÇÃO ANATOMIA: DIAGRAMA ESQUERDA / TEXTO DIREITA
+    ========================================================== */
+    .anatomy-grid {
+        display: flex !important;
+        flex-direction: row-reverse !important; /* Inverte a posição: o primeiro item (imagem) vai para a esquerda visual */
+        align-items: flex-start !important;
+        justify-content: space-between !important;
+        gap: 50px !important;
+        width: 100% !important;
+        margin-top: 30px !important;
     }
 
-    /* Responsividade para celular */
-    @media (max-width: 768px) {
-        .hero.wrap {
-            flex-direction: column;
-            gap: 20px;
+    /* Define o equilíbrio de espaço para a imagem */
+    .diagram-frame {
+        flex: 1 !important;
+        max-width: 500px !important;
+        width: 100% !important;
+    }
+
+    /* Define o equilíbrio de espaço para a lista técnica */
+    .anatomy-list {
+        flex: 1.2 !important;
+        width: 100% !important;
+        list-style: none !important;
+        padding: 0 !important;
+    }
+
+    /* Mantém a organização perfeita se abrir em telas de celular */
+    @media (max-width: 900px) {
+        .anatomy-grid {
+            flex-direction: column !important; /* Em telas pequenas, volta a ficar um sob o outro */
+            gap: 30px !important;
+        }
+        .diagram-frame {
+            max-width: 100% !important;
         }
     }
 
@@ -484,27 +507,24 @@
 </section>
 
   <!-- ANATOMIA GERAL -->
-  <section id="anatomia" class="wrap">
-    <div class="section-head">
-      <div>
-        <span class="eyebrow">Base morfológica</span>
-        <h2 data-editable="anatomiaTitle">As cinco peças fundamentais</h2>
-        <p data-editable="anatomiaDesc">Todo aparelho bucal de hexápode — por mais modificado que esteja — deriva do mesmo conjunto de estruturas. Reconhecê-las é o primeiro passo para interpretar qualquer variação.</p>
-  <div class="anatomy-grid">
-    <div class="diagram-frame">
-        <!-- Nova imagem do aparelho bucal cadastrada como PNG -->
-        <img src="aparelhobucal.png" alt="Diagrama esquemático do aparelho bucal dos hexápodes" class="diagrama-img">
-    </div>
-</div>
-      <ul class="anatomy-list">
-        <li><span class="idx">01</span><div><h4>Labro</h4><p>Placa anterior articulada ao clípeo; funciona como "lábio superior", ajudando a conter o alimento.</p></div></li>
-        <li><span class="idx">02</span><div><h4>Mandíbulas</h4><p>Par de peças esclerotizadas que se movem lateralmente (não verticalmente). É a estrutura ancestral de corte e trituração.</p></div></li>
-        <li><span class="idx">03</span><div><h4>Maxilas</h4><p>Par de apêndices segmentados com palpos maxilares sensoriais; auxiliam na manipulação do alimento.</p></div></li>
-        <li><span class="idx">04</span><div><h4>Hipofaringe</h4><p>Estrutura mediana interna, associada à abertura das glândulas salivares.</p></div></li>
-        <li><span class="idx">05</span><div><h4>Lábio</h4><p>"Lábio inferior", resultado da fusão de um par de apêndices ancestrais; porta os palpos labiais.</p></div></li>
-      </ul>
-    </div>
-  </section>
+<section id="anatomy" class="anatomy-section wrap">
+    <div class="hero-tag"><span class="dot"></span> Morfologia Externa</div>
+    <h2 class="section-title">Anatomia Geral do Aparelho Bucal</h2>
+    <p class="section-desc">As cinco peças homólogas fundamentais que compõem a estrutura bucal dos hexápodes.</p>
+
+    <div class="anatomy-grid">
+        <div class="diagram-frame">
+            <img src="aparelhobucal.png" alt="Diagrama esquemático do aparelho bucal dos hexápodes" class="diagrama-img">
+        </div>
+        
+        <ul class="anatomy-list">
+            <li><span class="idx">01</span><div><h4>Labro</h4><p>Placa anterior articulada ao clípeo; funciona como "lábio superior", ajudando a conter o alimento.</p></div></li>
+            <li><span class="idx">02</span><div><h4>Mandíbulas</h4><p>Par de peças esclerosizadas que se movem lateralmente (não verticalmente). É a estrutura ancestral de corte e trituração.</p></div></li>
+            <li><span class="idx">03</span><div><h4>Maxilas</h4><p>Par de apêndices segmentados com palpos maxilares sensoriais; auxiliam na manipulação do alimento.</p></div></li>
+            <li><span class="idx">04</span><div><h4>Hipofaringe</h4><p>Estrutura mediana interna, associada à abertura das glândulas salivares.</p></div></li>
+            <li><span class="idx">05</span><div><h4>Lábio</h4><p>"Lábio inferior", resultado da fusão de um par de apêndices ancestrais; porta os palpos labiais.</p></div></li>
+        </ul>
+    </div> </section>
 
   <!-- TIPOS DE APARELHO BUCAL -->
   <section id="tipos" class="wrap">
