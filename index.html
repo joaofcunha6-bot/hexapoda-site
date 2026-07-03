@@ -23,58 +23,54 @@
     --card-bg: #E4ECE4;       /* Fundo dos blocos de conteúdo */
     --shadow: rgba(15, 26, 17, 0.12);
     /* ... o código que aparece na sua imagem termina aqui ... */
-    /* =======================================================
-       NOVO: COLOCA A IMAGEM AO LADO DO TEXTO (HERO)
-    ========================================================== */
+  /* FORÇAR TEXTO NA ESQUERDA E AS 6 FOTOS NA DIREITA */
+body section.hero.wrap {
+    display: flex !important;
+    flex-direction: row-reverse !important; /* Texto na esquerda, mosaico na direita */
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 60px !important;
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 40px auto !important;
+}
 
-/* Força o texto a ficar na esquerda e o mosaico de fotos na direita */
-    .hero.wrap {
-        display: flex !important;
-        flex-direction: row-reverse !important; /* Muda a orientação: a galeria vai para a direita */
-        align-items: center !important;
-        justify-content: space-between !important;
-        gap: 50px !important;
-        max-width: 1200px !important;
-        width: 100% !important;
-        margin: 40px auto !important;
-    }
+/* Garante o espaço correto do bloco de texto */
+body .hero-texto-bloco {
+    flex: 1.2 !important;
+    width: 100% !important;
+}
 
-    /* Define o espaço do bloco de texto */
-    .hero-texto-bloco {
-        flex: 1.2 !important;
-        width: 100% !important;
-    }
+/* Garante o espaço e formato da grade das 6 fotos */
+body .hero-galeria-grid {
+    flex: 1 !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Duas colunas simétricas */
+    gap: 15px !important;
+    max-width: 480px !important;
+    width: 100% !important;
+}
 
-    /* Cria a grade de 2 colunas para as 6 imagens */
-    .hero-galeria-grid {
-        flex: 1 !important;
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important; /* 2 colunas iguais */
-        gap: 15px !important; /* Espaço entre as fotos */
-        max-width: 500px !important;
-        width: 100% !important;
-    }
+/* Estilo individual das fotos dentro da grade */
+body .galeria-foto-item {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important; /* Quadradas perfeitas */
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    box-shadow: var(--shadow) !important;
+    display: block !important;
+}
 
-    /* Estilização individual de cada uma das 6 fotos */
-    .galeria-foto-item {
-        width: 100% !important;
-        aspect-ratio: 1 / 1 !important; /* Força as fotos a ficarem quadradinhas e simétricas */
-        object-fit: cover !important;   /* Corta os excessos sem distorcer o inseto */
-        border-radius: 6px !important;   /* Cantos levemente arredondados */
-        box-shadow: var(--shadow) !important;
-        display: block !important;
+/* Responsividade para celulares */
+@media (max-width: 900px) {
+    body section.hero.wrap {
+        flex-direction: column-reverse !important; /* Fotos abaixo do texto no mobile */
+        gap: 30px !important;
     }
-
-    /* Ajuste para telas de celular (bota a galeria embaixo do texto) */
-    @media (max-width: 900px) {
-        .hero.wrap {
-            flex-direction: column !important;
-            gap: 30px !important;
-        }
-        .hero-galeria-grid {
-            max-width: 100% !important;
-        }
+    body .hero-galeria-grid {
+        max-width: 100% !important;
     }
+}
 
 /* Controla a imagem na lateral com proporção 2:3 (Aumentada) */
    /* Força o contêiner a aceitar o alinhamento lado a lado sem frescura */
@@ -118,43 +114,37 @@
     }
 
     /* =======================================================
-       INVERSÃO DA SEÇÃO ANATOMIA: DIAGRAMA ESQUERDA / TEXTO DIREITA
-    ========================================================== */
-    .anatomy-grid {
-        display: flex !important;
-        flex-direction: row-reverse !important; /* Inverte a posição: o primeiro item (imagem) vai para a esquerda visual */
-        align-items: flex-start !important;
-        justify-content: space-between !important;
-        gap: 50px !important;
-        width: 100% !important;
-        margin-top: 30px !important;
-    }
+   TESTE FORÇADO DE ALINHAMENTO: INVERTE O LADO DA ANATOMIA
+========================================================== */
+#anatomy .anatomy-grid {
+    display: flex !important;
+    flex-direction: row !important; /* Teste: força o texto de um lado e imagem do outro */
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 50px !important;
+    width: 100% !important;
+    margin-top: 30px !important;
+}
 
-    /* Define o equilíbrio de espaço para a imagem */
-    .diagram-frame {
-        flex: 1 !important;
-        max-width: 500px !important;
-        width: 100% !important;
-    }
+#anatomy .diagram-frame {
+    flex: 1 !important;
+    max-width: 500px !important;
+    width: 100% !important;
+}
 
-    /* Define o equilíbrio de espaço para a lista técnica */
-    .anatomy-list {
-        flex: 1.2 !important;
-        width: 100% !important;
-        list-style: none !important;
-        padding: 0 !important;
-    }
+#anatomy .anatomy-list {
+    flex: 1.2 !important;
+    width: 100% !important;
+    list-style: none !important;
+    padding: 0 !important;
+}
 
-    /* Mantém a organização perfeita se abrir em telas de celular */
-    @media (max-width: 900px) {
-        .anatomy-grid {
-            flex-direction: column !important; /* Em telas pequenas, volta a ficar um sob o outro */
-            gap: 30px !important;
-        }
-        .diagram-frame {
-            max-width: 100% !important;
-        }
+@media (max-width: 900px) {
+    #anatomy .anatomy-grid {
+        flex-direction: column !important;
+        gap: 30px !important;
     }
+}
 
 /* DEIXE ISSO AQUI EMBAIXO PARA RECONHECER A SUA NOVA FOTO: */
 .diagrama-img {
