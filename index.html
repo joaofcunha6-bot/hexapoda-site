@@ -27,9 +27,10 @@
        NOVO: COLOCA A IMAGEM AO LADO DO TEXTO (HERO)
     ========================================================== */
     ./* Estrutura principal: divide a tela entre Texto (Esquerda) e Galeria (Direita) */
+
     .hero.wrap {
         display: flex !important;
-        flex-direction: row !important; 
+        flex-direction: row-reverse !important; /* Força o texto na esquerda e as fotos na direita */
         align-items: center !important;
         justify-content: space-between !important;
         gap: 50px !important;
@@ -455,8 +456,6 @@
 <main>
   <div id="topo"></div>
   <section class="hero wrap">
-    
-    <img id="heroImage" class="hero-image" src="imagemgeral.png" alt="Visão geral adaptativa e evolutiva dos aparelhos bucais dos hexápodes">
 
     <div class="hero-texto-bloco">
         <div class="hero-tag"><span class="dot"></span> Material complementar de apresentação</div>
