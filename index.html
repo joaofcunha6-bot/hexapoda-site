@@ -40,15 +40,20 @@
         flex: 1.2;
     }
 
-    /* Controla a imagem na lateral */
+/* Controla a imagem na lateral com proporção 2:3 (Aumentada) */
     .hero-image {
-        flex: 1;
-        max-width: 350px;       /* Ajustei o limite máximo de largura para se adequar melhor ao formato vertical */
+        flex: 1.5;              /* Dá um pouco mais de peso/espaço para a área da imagem */
+        max-width: 480px;       /* Aumentei de 350px para 480px para ela ficar maior e mais visível */
         width: 100%;
-        aspect-ratio: 2 / 3;    /* Força a proporção exata de 2 de largura por 3 de altura */
-        object-fit: cover;      /* Preenche a caixa inteira na proporção correta sem achatar a anatomia */
-        border-radius: 8px;     /* Mantém os cantos arredondados elegantes */
+        aspect-ratio: 2 / 3;    /* Mantém a sua proporção de 2 de largura por 3 de altura */
+        object-fit: cover;      /* Preenche perfeitamente sem distorcer os insetos */
+        border-radius: 8px;     
         box-shadow: var(--shadow);
+    }
+
+    /* Ajuste do bloco de texto para equilibrar o tamanho com a nova imagem */
+    .hero-texto-bloco {
+        flex: 1;                /* Equilibra o espaço irmão com a imagem maior */
     }
 
     /* Regra de segurança para a outra imagem do site */
